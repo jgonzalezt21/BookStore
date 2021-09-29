@@ -1,0 +1,28 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}BookStore{% endblock  %}</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    {% block css %}{% endblock %}
+  </head>
+  <body>
+    <header>
+        {% include './menu.html' %}
+    </header>
+
+    <div id="content">{% block content %}{% endblock %}</div>
+
+    <!-- Bootstrap JS -->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jQuery.min.js' %}"></script>
+    {% block js %}{% endblock %}
+  </body>
+</html>
