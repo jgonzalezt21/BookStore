@@ -1,0 +1,22 @@
+<div class="pb-3 h5">{{ category.name|default:'All Books'|title }}</div>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {% for prod in products %}
+        <div class="col">
+            <div class="card shadow-sm">
+                <img class="img-fluid" alt="Responsive image" src="{{ prod.image.url }}">
+                <div class="card-body">
+                <p class="card-text">
+                    <a class="text-dark text-decoration-none" href="{{ prod.get_absolute_url }}">{{ prod.title }}</a>    
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                    {% comment %} <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div> {% endcomment %}
+                    <small class="text-muted">{{ prod.updated|timesince }}</small>
+                </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
