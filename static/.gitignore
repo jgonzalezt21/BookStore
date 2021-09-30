@@ -1,0 +1,4 @@
+### STATIC ###
+bootstrap/
+*.jQuery.min.js
+*.popper.min.js
